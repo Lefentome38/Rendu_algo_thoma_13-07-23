@@ -1,16 +1,15 @@
 import {exo1} from './exo1';
+import {exo2} from './exo2';
+import {exo3} from './exo3';
+import {exo4} from './exo4';
+import {brouillon} from './brouillon';
+import {Rendu_du_brief_thoma_D } from './Rendu_du_brief_thoma_D';
 
-// A Supprimer
-console.log('Hello TypeScript');
 
-let i = 0;
-i++;
-if(i < 2) {
-    i += 3;
-}
-else {
-    i += 2;
-}
-console.log('affichage de i', i);
 
-exo1();
+//exo1();
+//exo2();
+//exo3();
+//exo4();
+//brouillon();
+Rendu_du_brief_thoma_D();
