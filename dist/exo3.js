@@ -4,15 +4,15 @@ exports.exo3 = void 0;
 const exo3 = () => {
     function recup_nbj_stok(stokeinit, nb_minit) {
         let nbj = 0; // le nombre de jour
-        let stok = stokeinit; //le stoke de foin
+        let stok_foin = stokeinit; //le stoke de foin
         let cm = 0.25; //consomation des moutons
         let nb_m = nb_minit; // le nombre de moutons
         let nb_j_g = 1000; //le nombre jour avant le gigot
-        while (stok > 0) {
+        while (stok_foin > 0) {
             if (nbj === nb_j_g) {
                 nb_m = nb_m - 1;
             }
-            stok = stok - (cm * nb_m);
+            stok_foin = stok_foin - (cm * nb_m);
             nbj++;
         }
         console.log('le nombre de jour ', nbj);

@@ -1,5 +1,3 @@
-import { Console, log } from "console";
-
 export const exo1 = () => {
     let a = 5;
     let b = 1;

@@ -1,5 +1,3 @@
-import { table } from "console";
-
 export const Rendu_du_brief_thoma_D  = () =>{
     const vit_wagon = 92
     let nbr_wagon = [3,4,5,6,7,8,9,10,11,12]
@@ -20,26 +18,23 @@ export const Rendu_du_brief_thoma_D  = () =>{
     }, 0) // le nombre de passager dans le train =225
 
     console.log('rendu before', rendu)
+    let nbr_km_parcouru = 0
 
-    for (let i = 0; i < sum_passager; i++) {
-        const randomWagonIndex = getRandomWagonIndex(rendu.length)
-        rendu[randomWagonIndex] = rendu[randomWagonIndex] - 1
-        rendu = rendu.filter((nbPassagersDuWagon) => {
-            return nbPassagersDuWagon > 0
-        })
-        console.log("nombre de passager part wagon",rendu);
-        
-        const vitesseActuelle = vit_wagon + (nbr_wagon.length-rendu.length)*nbr_wagon.length  
+        for (let i = 0; i < sum_passager; i++) {
+            const randomWagonIndex = getRandomWagonIndex(rendu.length)
+            rendu[randomWagonIndex] = rendu[randomWagonIndex] - 1
+            rendu = rendu.filter((nbPassagersDuWagon) => {
+                return nbPassagersDuWagon > 0
+            })
+            console.log("nombre de passager part wagon",rendu);
+            
+            const vitesseActuelle = vit_wagon + (nbr_wagon.length-rendu.length)*10  
+            
+            nbr_km_parcouru = nbr_km_parcouru + vitesseActuelle/60
+            console.log("vitesse actuelle",vitesseActuelle);
+            console.log("km parcouru",nbr_km_parcouru);
+        }
 
-        console.log("vitesse actuelle",vitesseActuelle);
-    }
 
-
-    //const nbr_km_parcouru = vit_wagon*(sum_passager/60) // calcul de la distance parcouru (mais un petit pépin)
-    //le calcul ne risque de ne plus marcher
-
-    console.log(JSON.stringify(rendu)); // (JSON.stringify) permet au randu d'etre affiche sur une seul ligne
-    console.log(getRandomWagonIndex(),sum_passager);
-    console.log("la vitesse du train est de",vit_wagon,"km/h");
-    //console.log("la distance parcouru est de",nbr_km_parcouru,"Km");
+    console.log("le train a parcouru",nbr_km_parcouru,"km"); //comment faire pour arrondire au dixieme
 }
